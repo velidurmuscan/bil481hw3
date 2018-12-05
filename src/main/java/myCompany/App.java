@@ -57,7 +57,8 @@ public class App {
     		sb.append(e.toString());
     		sb.append("\n____________________________________________________________________________________\n");
     	}
-    	return sb.toString();
+//    	return sb.toString();
+    	return sb.toString().replaceAll("\n", "<br />");
     }
     
     public static int getHerokuAssignedPort() {

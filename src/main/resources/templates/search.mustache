@@ -1,18 +1,17 @@
 <title>Sanction List Searcher</title>
-  <h1>Sanction List Searcher</h1>
-  <p>This is the HW#3 assignment of Bil481 Software Engineering Course</p>
-  <p>Veli Durmuşcan, 141201001</p>
-  <p>People in a sanction list is searched. User could enter name or surname or both of the person whom to be searched. Because approximate string matching is used, user can enter a considerably false name in order to search a person. (For example, enter Tufil or Tufaile for Tufail)</p>
-  
-  <p><br></p>
-  <form action="search" method="post">
-      <textarea name="firstNameParam" rows="10" cols="30" placeholder="First Name"></textarea>
-      <textarea name="lastNameParam" rows="10" cols="30" placeholder="Last Name"></textarea>
-      <br>
-      <input type="submit">
-  </form>
-  <p><br></p>
-  <h1>Search Result</h1>
-  {{result}}
+<h1>Sanction List Searcher</h1>
+<p>This is the HW#3 assignment of Bil481 Software Engineering Course</p>
+<p>Veli Durmuşcan, 141201001</p>
+<p>People in a sanction list is searched. User could enter name or surname or both of the person whom to be searched. Because approximate string matching is used, user can enter a considerably false name in order to search a person. (For example, enter Tufil or Tufaile for Tufail)</p>
+<p><br></p>
+<form action="search" method="post">
+<textarea name="firstNameParam" rows="10" cols="30" placeholder="First Name"></textarea>
+<textarea name="lastNameParam" rows="10" cols="30" placeholder="Last Name"></textarea>
+<br>
+<input type="submit">
+</form>
+<p><br></p>
+<h1>Search Result</h1>
+{{{result}}}
 
 

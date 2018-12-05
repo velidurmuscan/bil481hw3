@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.org/velidurmuscan/bil481hw1.svg?branch=master)](https://travis-ci.org/velidurmuscan/bil481hw1)
+[![Build Status](https://travis-ci.com/velidurmuscan/bil481hw3.svg?branch=master)](https://travis-ci.com/velidurmuscan/bil481hw3)
 
-This is homework#1 assignment of Bil481 Software Engineering Course in TOBB University of Economics and Technology.
+This is homework#3 assignment of Bil481 Software Engineering Course in TOBB University of Economics and Technology.
 
-In this project, user enters 2 integer arrays(A,B) and 2 integers(a,b). Code returns true if a is in A and b is in B.
+In this project, people in a sanction list is searched. User could enter name or surname or both of the person whom to be searched. Because approximate string matching is used, user can enter a considerably false name in order to search a person. (For example, enter Tufil or Tufaile for Tufail)
 
-Demo site: https://gentle-coast-29262.herokuapp.com/compute
+Demo site: https://cryptic-sierra-64424.herokuapp.com/ 
 
-Author: Veli Durmuþcan
+Author: Veli Durmuscan

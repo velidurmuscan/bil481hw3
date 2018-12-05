@@ -55,7 +55,7 @@ public class App {
     	StringBuilder sb = new StringBuilder();
     	for(Entity e : entityList) {
     		sb.append(e.toString());
-    		sb.append("\n____________________________________________________________________________________\n");
+    		sb.append("\n------------------------------------------------------------------------------------\n");
     	}
 //    	return sb.toString();
     	return sb.toString().replaceAll("\n", "<br>");

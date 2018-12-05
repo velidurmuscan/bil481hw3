@@ -46,7 +46,9 @@ public class AppTest
 		Entity e3 = new Entity(3, "Buse", "Altinok");		
 		ArrayList<Entity> entityList = new ArrayList<Entity>(Arrays.asList(e1,e2,e3));
 		String out = new String(App.searchResult(entityList));
-		assertTrue(out.equals(new String("1\nAhmet\nCan\n____________________________________________________________________________________\n2\nAhmet\nAltinok\n____________________________________________________________________________________\n3\nBuse\nAltinok\n____________________________________________________________________________________\n")));
+		String testString = new String("1\nAhmet\nCan\n------------------------------------------------------------------------------------\n2\nAhmet\nAltinok\n------------------------------------------------------------------------------------\n3\nBuse\nAltinok\n------------------------------------------------------------------------------------\n");
+		testString = testString.replaceAll("\n", "<br>");
+		assertTrue(out.equals(testString));
 	}
 	
 	public void testFirstName() {

@@ -24,27 +24,41 @@ import org.xml.sax.SAXException;
 
 public class App {
 	
-    public static List<Entity> search(List<Entity> entityList, String firstName, String lastName) {
-    	
+    public static boolean approximatelyMatch(String s1, String s2) {
+    	if(s1.equalsIgnoreCase(s2))
+    		return true;
+    	for(int i=0; i<s1.length(); i++) {
+    		String s1_ = s1.substring(0, i) + s1.substring(i+1, s1.length());
+    		if(s1_.equalsIgnoreCase(s2))
+    			return true;
+    	}
+    	for(int i=0; i<s2.length(); i++) {
+    		String s2_ = s2.substring(0, i) + s2.substring(i+1, s2.length());
+    		if(s2_.equalsIgnoreCase(s1))
+    			return true;
+    	}
+    	return false;
+    }
+    
+    public static List<Entity> search(List<Entity> entityList, String firstName, String lastName) {	
     	List<Entity> returnList = new ArrayList<Entity>();    	
         if(firstName.equals("") && lastName.equals("")) {	// None of FIRSTNAME and LASTNAME is entered
-
         }
         else if(firstName.equals("")) {	// Only LASTNAME is entered
         	for(Entity e : entityList) {
-        		if(e.getLastName().equals(lastName))
+        		if(approximatelyMatch(e.getLastName(),lastName))
         			returnList.add(e);
         	}
         }
         else if(lastName.equals("")) { // Only FIRSTNAME is entered
         	for(Entity e : entityList) {
-        		if(e.getFirstName().equals(firstName))
+        		if(approximatelyMatch(e.getFirstName(),firstName))
         			returnList.add(e);
         	}
         }
         else {	// Both of FIRSTNAME and LASTNAME are entered
         	for(Entity e : entityList) {
-        		if(e.getFirstName().equals(firstName) && e.getLastName().equals(lastName))
+        		if(approximatelyMatch(e.getFirstName(),firstName) && approximatelyMatch(e.getLastName(),lastName))
         			returnList.add(e);
         	}
         }       
@@ -104,6 +118,5 @@ public class App {
             map.put("result", "not computed yet!");
             return new ModelAndView(map, "search.mustache");
         }, new MustacheTemplateEngine());
-        
     }
 }

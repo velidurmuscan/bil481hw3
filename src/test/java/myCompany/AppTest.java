@@ -32,14 +32,7 @@ public class AppTest
         return new TestSuite( AppTest.class );
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
-	
+    
 	public void testSearcResult() {
 		Entity e1 = new Entity(1, "Ahmet", "Can");
 		Entity e2 = new Entity(2, "Ahmet", "Altinok");
@@ -76,6 +69,16 @@ public class AppTest
 		List<Entity> entityList = new ArrayList<Entity>(Arrays.asList(e1,e2,e3));
 		List<Entity> searchList = App.search(entityList, "Ahmet", "Altinok");
         assertTrue(searchList.size()==1 && searchList.get(0).equals(e2));
+    }
+    
+    public void testApproximatelyMatch() {
+    	String original = "Tufail";
+    	String s1 = "Tuail";
+    	String s2 = "Tufil";
+    	String s3 = "Ufail";
+    	String s4 = "Tfail";
+    	String s5 = "Tufaile";
+    	assertTrue(App.approximatelyMatch(original, s1) && App.approximatelyMatch(original, s2) && App.approximatelyMatch(original, s3) && App.approximatelyMatch(original, s4) && App.approximatelyMatch(original, s5));
     }
 
 }

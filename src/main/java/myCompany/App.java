@@ -55,7 +55,7 @@ public class App {
     	StringBuilder sb = new StringBuilder();
     	for(Entity e : entityList) {
     		sb.append(e.toString());
-    		sb.append("____________________________________________________________________________________\n");
+    		sb.append("\n____________________________________________________________________________________\n");
     	}
     	return sb.toString();
     }
